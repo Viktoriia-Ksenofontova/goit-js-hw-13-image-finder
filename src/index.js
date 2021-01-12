@@ -16,8 +16,10 @@ refs.searchForm.addEventListener('submit', event => {
     
   apiService.fetchImages()
     .then(images => {
+      if (images) {
         updateImageMarkup(images);
-        refs.loadMoreBtn.classList.remove('is-hidden'); 
+        refs.loadMoreBtn.classList.remove('is-hidden');
+      }
     })
   
 });
